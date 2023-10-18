@@ -1,0 +1,7 @@
+*.log
+.terraform*
+/dist/
+terraform.tfstate*
+/playground/*
+/vendor
+terraform-provider-rhcs
