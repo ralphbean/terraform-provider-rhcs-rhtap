@@ -135,3 +135,8 @@ e2e_test: tools install
         -r \
         --focus-file tests/e2e/.* \
 		$(NULL)
+
+.PHONY: prepare_release
+
+prepare_release:
+	import_path=${import_path} ldflags="${ldflags}" bash ./build/build_multiarch
