@@ -18,7 +18,7 @@ do
     if [[ $os == "windows" ]]; then
         extension=".exe"
     fi
-    GOOS=${os} GOARCH=${arch} go build -ldflags="$ldflags" -o /tmp/terraform-provider-rhcs_${os}_${arch}
+    GOOS=${os} GOARCH=${arch} go build -ldflags="${ldflags}" -o /tmp/terraform-provider-rhcs_${os}_${arch}
     mv /tmp/terraform-provider-rhcs_${os}_${arch} terraform-provider-rhcs_v${REL_VER}${extension}
     zip releases/terraform-provider-rhcs_${REL_VER}_${os}_${arch}.zip CHANGELOG.md LICENSE README.md terraform-provider-rhcs_v${REL_VER}${extension}
     rm terraform-provider-rhcs_v${REL_VER}${extension}
